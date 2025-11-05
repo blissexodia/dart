@@ -1,5 +1,3 @@
-import 'package:\study_materials\encapsulation.dart';
-
 import 'encapsulation.dart';
 
 void main() {
