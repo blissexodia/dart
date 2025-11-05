@@ -1,4 +1,6 @@
-import 'package:DART_APPLICATION_1/encapsulation.dart';
+import 'package:\study_materials\encapsulation.dart';
+
+import 'encapsulation.dart';
 
 void main() {
   Arithmetics arithmetics = Arithmetics(34, 34);
