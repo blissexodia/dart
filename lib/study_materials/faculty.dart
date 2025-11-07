@@ -1,32 +1,54 @@
+// Inheretence
+// parent class /base class
 class Faculty {
-  final String fname;
-  final String lname;
+  final String firstName;
+  final String lastName;
   final String department;
-  final double salary;
+  // final double salary;
+
   Faculty({
-    required this.fname,
-    required this.lname,
+    required this.firstName,
+    required this.lastName,
     required this.department,
-    required this.salary,
+    // required this.salary,
   });
 
-  void displayFUllName() {
-    print("Full Name: $fname $lname");
+  void displayFullName() {
+    print("Full Name : $firstName $lastName");
   }
 
-  double calculateAnnualSalary() {
-    return salary * 12;
+  double calculateSalary() {
+    return 0;
   }
 }
 
-void main() {
-  Faculty faculty = Faculty(
-    fname: "fname",
-    lname: "lname",
-    department: "department",
-    salary: 234234,
-  );
+// child class /derived class
+class PartTimeFaculty extends Faculty {
+  final double hourlyRate;
+  final int hoursWorked;
 
-  faculty.displayFUllName();
-  print("Annual Salary: \$${faculty.calculateAnnualSalary()}");
+  PartTimeFaculty({
+    required super.firstName,
+    required super.lastName,
+    required super.department,
+    required this.hourlyRate,
+    required this.hoursWorked,
+  });
+}
+
+class FullTimeFaculty extends Faculty {
+  final double salary;
+
+  FullTimeFaculty({
+    required super.firstName,
+    required super.lastName,
+    required super.department,
+    required this.salary,
+  });
+
+  // polymorphism => having many forms: method overriding
+  @override
+  double calculateSalary() {
+    return 12 * salary;
+  }
 }
